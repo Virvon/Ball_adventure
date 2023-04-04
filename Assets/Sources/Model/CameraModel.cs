@@ -5,7 +5,7 @@ namespace BallAdventure.Model
 {
     public class CameraModel
     {
-        private Vector3 _offset = new Vector3(0, 3.5f, -1);
+        private Vector3 _offset = new Vector3(3, 4.6f, -1);
 
         public event Action PositionChanged;
 

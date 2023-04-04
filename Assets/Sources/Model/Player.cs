@@ -6,7 +6,7 @@ namespace BallAdventure.Model
     public class Player
     {
         private float _speed = 4;
-        private float _jumpForce = 200;
+        private float _jumpForce = 300;
 
         private Vector2 _moveDirection = new Vector2(1, 0);
 
@@ -27,12 +27,11 @@ namespace BallAdventure.Model
         {
             _isGrounded = true;
 
-            Debug.Log("grounded");
+            VelocityChanged?.Invoke();
         }
 
         public void TryJump()
         {
-            Debug.Log(_isGrounded);
             if (_isGrounded)
             {
                 Jumped?.Invoke();

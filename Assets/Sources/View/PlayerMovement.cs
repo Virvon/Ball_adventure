@@ -14,7 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     public event Action Grounded;
 
-    private Vector2 giz;
+    public event Action Died;
+
+    public event Action TakedMoney;
 
     private void OnEnable()
     {
@@ -40,6 +42,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Ground ground))
             Grounded?.Invoke();
+        else if (collision.collider.TryGetComponent(out Let let))
+            Died?.Invoke();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.TryGetComponent(out Money money))
+        {
+            Destroy(money.gameObject);
+
+            TakedMoney?.Invoke()
+        }
     }
 
     public void SetVelocity(Vector2 velocity)
@@ -50,18 +64,10 @@ public class PlayerMovement : MonoBehaviour
     public void Jump(Vector2 force)
     {
         _rigidbody.AddForce(force);
-        giz = force;
-        Debug.Log(force);
     }
 
     private bool JumpPerformed()
     {
         return _input.Player.Jump.phase == InputActionPhase.Performed;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(giz.x, giz.y, 0));
     }
 }
