@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform _target;
+    public Vector2 TargetPosition => _target.position;
 
     private Vector2 _currentTargetPosition;
 
     public event Action TargetPositionChanged;
-
-    public Vector2 TargetPosition => _target.position;
 
     private void Start()
     {

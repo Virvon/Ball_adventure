@@ -581,7 +581,7 @@ MonoBehaviour:
   - {fileID: 335721751848479091, guid: 45cea26c8976a8c49a737ba3410ce9a1, type: 3}
   - {fileID: 1062584309185384024, guid: 2d1c6935c3215a44b9f88bd5b6a5470b, type: 3}
   _player: {fileID: 2054864733}
-  _viewRadius: 10
+  _viewRadius: 15
   _cellSize: 1
 --- !u!4 &1932644105
 Transform:

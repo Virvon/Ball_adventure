@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] private GameObject _creatorsPanel;
     public void Play()
     {
         SceneLoader sceneLoader = new SceneLoader();
@@ -11,11 +12,11 @@ public class Menu : MonoBehaviour
 
     public void Exit()
     {
-
+        Application.Quit();
     }
 
     public void ShowCreators()
     {
-
+        _creatorsPanel.SetActive(true);
     }
 }

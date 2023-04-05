@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using BallAdventure.Model;
 
 public class GamePresenter : IPresenter
@@ -13,6 +10,7 @@ public class GamePresenter : IPresenter
         _view = view;
         _model = model;
     }
+
     public void OnEnable()
     {
         _view.GameOver += OnGameOver;
@@ -30,7 +28,6 @@ public class GamePresenter : IPresenter
         _model.LoadedMenuScene -= OnLoadMenuScene;
         _model.MoneyCoutnChanged -= OnMoneyCountChanged;
     }
-
 
     private void OnGameOver()
     {

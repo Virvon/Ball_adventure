@@ -6,6 +6,7 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private GridObject[] _templates;
     [SerializeField] private PlayerMovement _player;
+
     [SerializeField] private float _viewRadius;
     [SerializeField] private float _cellSize;
 

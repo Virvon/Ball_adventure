@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(money.gameObject);
 
-            TakedMoney?.Invoke()
+            TakedMoney?.Invoke();
         }
     }
 
